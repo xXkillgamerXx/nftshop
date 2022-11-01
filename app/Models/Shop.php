@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Shop extends Model
 {
     use HasFactory;
-
+    protected $fillable =[
+        'user_id',
+        'name',
+        'slug' ,
+        'description',
+        'category_id',
+    ];
     function plan (){
         return $this->belongsTo(Plan::class);
     }

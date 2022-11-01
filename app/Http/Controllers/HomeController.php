@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Follow;
+use App\Models\Shop;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
 
@@ -25,22 +27,43 @@ class HomeController extends Controller
      */
     public function index()
     {
+//        $user = auth()->user();
+//        $user->wallet;
+//
+//        $user->shops->filter(function ($shop){
+//            $shop->items;
+//            $shop->category;
+//            $shop->domain;
+//            return $shop->plan;
+//        });
+//
+//        $user->wallets->filter(function ($wallet){
+//            return $wallet->chain;
+//        });
+
         $user = auth()->user();
-        $user->wallet;
+        $shops = $user->shops;
+        $categories = Category::all();
 
-        $user->shops->filter(function ($shop){
-            $shop->items;
-            $shop->category;
-            $shop->domain;
-            return $shop->plan;
-        });
+        return view('home', compact('shops', 'categories'));
+    }
 
-        $user->wallets->filter(function ($wallet){
-            return $wallet->chain;
-        });
+    public function create (){
+        $categories = Category::all();
 
-        return $user;
+        return view('shops.create',compact( 'categories'));
+    }
 
-        return view('home');
+    public function store (Request  $request){
+        $user = auth()->user();
+        Shop::firstOrCreate([
+            'user_id' => $user->id,
+            'name' => $request->name,
+            'slug' =>  $request->slug,
+            'description' => $request->description,
+            'category_id' => $request->category_id,
+        ]);
+
+        return redirect()->route('home');
     }
 }

@@ -22,26 +22,29 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::factory(10)->create([
+        Category::factory()->create(['name' => 'Art']);
+        Category::factory()->create(['name' => 'Sports']);
+        Category::factory()->create(['name' => 'Utility']);
+
+        $user = User::factory(1)->create([
             'wallet_id' => function(){
                 return Wallet::factory()->create()->id;
             },
         ])->filter(function ($item){
             $chain = Chain::factory()->create();
-            Wallet::factory(3)->create([
+            Wallet::factory(2)->create([
                 'user_id' => $item->id,
                 'chain_id' => $chain->id,
             ]);
             $plan = Plan::factory()->create();
-            $category = Category::factory()->create();
             $domain = Domain::factory()->create();
-            Shop::factory(5)->create([
+            Shop::factory(2)->create([
                 'user_id' => $item->id,
                 'plan_id' => $plan->id,
-                'category_id' => $category->id,
+                'category_id' => 1,
                 'domain_id' => $domain->id
             ])->filter(function ($shop){
-                Item::factory(5)->create([
+                Item::factory(2)->create([
                     'shop_id' => $shop->id
                 ]);
             });
