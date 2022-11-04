@@ -4,52 +4,32 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-8">
             <div class="footer-widget xl:flex xl:flex-col xl:justify-center xl:col-span-2">
                 <a href="index.html" class="block mb-10">
-                    <img class="h-10" src="assets/images/logo.png" alt="title">
+                    <img class="h-10" src="{{ asset('assets/images/logo.png') }}" alt="title">
                 </a>
                 <div class="social-share flex items-center">
-                    <a class="flex items-center justify-center w-10 h-10 bg-blueGray-200 rounded-lg border border-blueGray-200 transition duration-500 hover:bg-indigo-500 mr-2" href="#"><img class="w-4 h-4" src="assets/images/facebook-icon.svg" alt="title"></a>
-                    <a class="flex items-center justify-center w-10 h-10 bg-blueGray-200 rounded-lg border border-blueGray-200 transition duration-500 hover:bg-indigo-500 mr-2" href="#"><img class="w-4 h-4" src="assets/images/twitter-icon.svg" alt="title"></a>
-                    <a class="flex items-center justify-center w-10 h-10 bg-blueGray-200 rounded-lg border border-blueGray-200 transition duration-500 hover:bg-indigo-500 mr-2" href="#"><img class="w-4 h-4" src="assets/images/instagram-icon.svg" alt="title"></a>
-                    <a class="flex items-center justify-center w-10 h-10 bg-blueGray-200 rounded-lg border border-blueGray-200 transition duration-500 hover:bg-indigo-500 mr-2" href="#"><img class="w-4 h-4" src="assets/images/linkein-icon.svg" alt="title"></a>
+                    <a class="flex items-center justify-center w-10 h-10 bg-blueGray-200 rounded-lg border border-blueGray-200 transition duration-500 hover:bg-indigo-500 mr-2" href="#"><img class="w-4 h-4" src="{{ asset('assets/images/facebook-icon.svg') }}" alt="title"></a>
+                    <a class="flex items-center justify-center w-10 h-10 bg-blueGray-200 rounded-lg border border-blueGray-200 transition duration-500 hover:bg-indigo-500 mr-2" href="#"><img class="w-4 h-4" src="{{ asset('assets/images/twitter-icon.svg') }}" alt="title"></a>
+                    <a class="flex items-center justify-center w-10 h-10 bg-blueGray-200 rounded-lg border border-blueGray-200 transition duration-500 hover:bg-indigo-500 mr-2" href="#"><img class="w-4 h-4" src="{{ asset('assets/images/instagram-icon.svg') }}" alt="title"></a>
+                    <a class="flex items-center justify-center w-10 h-10 bg-blueGray-200 rounded-lg border border-blueGray-200 transition duration-500 hover:bg-indigo-500 mr-2" href="#"><img class="w-4 h-4" src="{{ asset('assets/images/linkein-icon.svg') }}" alt="title"></a>
                 </div>
             </div>
             <div class="footer-widget pb-4 lg:pb-0 lg:border-b-0 border-b border-indigo-200">
-                <h4 class="font-display text-xl text-blueGray-900 font-semibold">Navigation</h4>
-                <ul class="mt-4 xl:mt-10 flex flex-wrap xl:block">
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="index.html">Home</a></li>
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="explore.html">Explore</a></li>
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="wallet.html">Wallet</a></li>
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="creator-published.html">Author</a></li>
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="term-condition.html">Terms </a></li>
-                </ul>
-            </div>
-            <div class="footer-widget pb-4 lg:pb-0 lg:border-b-0 border-b border-indigo-200">
-                <h4 class="font-display text-xl text-blueGray-900 font-semibold">Explore</h4>
-                <ul class="mt-4 xl:mt-10 flex flex-wrap xl:block">
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="explore.html">Explore Artwork</a></li>
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="item-single.html">Single Artwork</a></li>
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="leaderboard.html">Explore Creators</a></li>
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="creator-published.html">Single Creators</a></li>
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="#">Community</a></li>
-                </ul>
-            </div>
-            <div class="footer-widget pb-4 lg:pb-0 lg:border-b-0 border-b border-indigo-200">
-                <h4 class="font-display text-xl text-blueGray-900 font-semibold">Community</h4>
-                <ul class="mt-4 xl:mt-10 flex flex-wrap xl:block">
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="item-single.html">Item Details</a></li>
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="item-single2.html">Item Details v2</a></li>
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="activity.html">Activity</a></li>
 
-                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="contact.html">Contact</a></li>
-                </ul>
+            </div>
+            <div class="footer-widget pb-4 lg:pb-0 lg:border-b-0 border-b border-indigo-200">
+
+            </div>
+            <div class="footer-widget pb-4 lg:pb-0 lg:border-b-0 border-b border-indigo-200">
+
             </div>
             <div class="footer-widget col-span-1 md:col-span-2">
-                <h4 class="font-display text-xl text-blueGray-900 font-semibold">Subscribe Us</h4>
-                <form class="footer-newsletter flex items-center w-full mb-4 mt-4 xl:mt-10">
-                    <input class="bg-transparent border-2 border-r-0 border-indigo-500 transition duration-500 focus:outline-none hover:bg-white rounded-l w-full h-14 p-4" type="text" placeholder="Your e-mail address">
-                    <button class="flex items-center rounded-r h-14 py-4 px-8 transition-all duration-500 bg-gradient-to-tl from-indigo-500 via-purple-500 to-indigo-500 bg-size-200 bg-pos-0 hover:bg-pos-100" type="submit"><img class="w-6 h-6" src="assets/images/newsletter-icon.svg" alt="title"></button>
-                </form>
-                <p class="font-body text-sm text-blueGray-600">Your privacy protected! We dont disclose Email.</p>
+                <h4 class="font-display text-xl text-blueGray-900 font-semibold">Navigation</h4>
+                <ul class="mt-4 xl:mt-10 flex flex-wrap xl:block">
+                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="{{ route('home') }}">Home</a></li>
+                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="{{ route('shop.create') }}">Create Shop</a></li>
+                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="{{ route('home') }}">Shops list</a></li>
+                    <li class="mb-4 mr-4"><a class="font-body text-blueGray-600 transition duration-500 hover:text-indigo-500 underline-hover" href="#">Support</a></li>
+                </ul>
             </div>
 
         </div>

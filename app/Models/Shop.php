@@ -10,6 +10,8 @@ class Shop extends Model
     use HasFactory;
     protected $fillable =[
         'user_id',
+        'banner',
+        'image',
         'name',
         'slug' ,
         'description',
@@ -29,5 +31,9 @@ class Shop extends Model
 
     function domain (){
         return $this->belongsTo(Domain::class);
+    }
+
+    function user (){
+        return $this->belongsTo(User::class);
     }
 }

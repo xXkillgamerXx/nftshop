@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'wallet',
+        'balance',
     ];
 
     /**
@@ -51,7 +53,7 @@ class User extends Authenticatable
     }
 
     function shops (){
-        return $this->hasMany(Shop::class);
+        return $this->hasMany(Shop::class)->orderBy('id','DESC');
     }
 
 }
