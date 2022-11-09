@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\WalletUser;
 use Elliptic\EC;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -49,6 +50,22 @@ class Web3LoginController
         }
 
         return false;
+    }
+
+    public  function add_wallet (Request $request){
+        $result = $this->verifySignature(session()->pull('sign_message'), $request->input('signature'), $request->input('address'));
+
+        if($result){
+
+          return  WalletUser::firstOrCreate(
+                ['wallet' => $request->input('address')],
+
+                [
+                    'user_id' => auth()->user()->id,
+                    'wallet' => $request->input('address'),
+                ]
+            );
+        }
     }
 
     protected function verifySignature(string $message, string $signature, string $address): bool

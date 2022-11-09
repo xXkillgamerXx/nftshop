@@ -52,8 +52,10 @@ class User extends Authenticatable
         return $this->hasMany(Wallet::class);
     }
 
-    function shops (){
-        return $this->hasMany(Shop::class)->orderBy('id','DESC');
-    }
 
+
+
+    function  wallet_users (){
+        return $this->hasMany(WalletUser::class);
+    }
 }

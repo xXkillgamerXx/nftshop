@@ -17,7 +17,7 @@
     <script>
         let network = 'mainnet';
         let sign_message = '{{route('web3.login.message')}}';
-        let verify = '{{route('web3.login.verify')}}';
+        let verify = '{{route('wallet.verify')}}';
         let token = '{{ csrf_token() }}';
         //let logout_route = '{{ route('logout')}}';
         let domain = '{{preg_replace("(^https?://)", "", URL::current())}}'

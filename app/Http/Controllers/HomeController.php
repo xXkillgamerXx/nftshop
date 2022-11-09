@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     public  function  home (){
@@ -22,12 +22,17 @@ class HomeController extends Controller
 
     public function index()
     {
-        if(request()->tag != null || request()->tag != 0)
-            $shops = auth()->user()->shops;
-        else
-            $shops = auth()->user()->shops;
+        $shops = [];
 
+        $wallet_users = auth()->user()->wallet_users;
 
+        foreach ($wallet_users as $wallet_user){
+            foreach ($wallet_user->shops as $shop){
+                $shops[] = $shop;
+            }
+        }
+
+        $shops = collect($shops);
         $categories = Category::all();
 
         return view('home', compact('shops', 'categories'));

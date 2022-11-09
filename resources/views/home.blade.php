@@ -38,14 +38,15 @@
                         </div>
                     </div>
                 @else
+
                 @foreach($shops as $shop)
                         <a href="{{ route('shop.show', $shop->id) }}">
                             <div class="activity-box  border border-blueGray-100 sm:flex p-4 rounded transition duration-500 hover:shadow-lg" data-aos="fade-up">
                                 <div class="flex-shrink-0	activity-image relative rounded">
                                     <img class="w-full sm:h-28 sm:w-28 rounded object-cover mb-4 sm:mb-0" src="{{ $shop->image }}" alt="title">
-{{--                                    <span class="flex items-center justify-center absolute top-4 -right-4 bg-purple-100 rounded-lg w-8 h-8 mx-auto mb-1">--}}
-{{--                            <img class="w-4 h-4" src="{{ asset('assets/images/activity-icon.svg') }}" alt="title">--}}
-{{--                        </span>--}}
+                                    <span class="flex items-center justify-center absolute top-4 -right-4 bg-purple-100 rounded-lg w-8 h-8 mx-auto mb-1">
+                            <img class="w-4 h-4" src="{{ asset('assets/images/activity-icon.svg') }}" alt="title">
+                        </span>
                                 </div>
                                 <div class="activity-content flex flex-col flex-grow justify-center sm:pl-6">
                                     <div class="mb-2"><h4 class="font-display text-xl text-blueGray-900 font-bold">{{ $shop->name }}</h4></div>

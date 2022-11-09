@@ -18,6 +18,7 @@ class ItemController extends Controller
     public function create($shop)
     {
         $shop = Shop::whereId($shop)->firstOrFail();
+
         return view('items.create', compact('shop'));
     }
 

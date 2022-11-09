@@ -9,13 +9,13 @@ class Shop extends Model
 {
     use HasFactory;
     protected $fillable =[
-        'user_id',
-        'banner',
+        'wallet_users_id',
         'image',
         'name',
         'slug' ,
         'description',
         'category_id',
+        'wallet_id'
     ];
     function plan (){
         return $this->belongsTo(Plan::class);

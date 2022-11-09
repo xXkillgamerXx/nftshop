@@ -22,22 +22,17 @@ class ShopController extends Controller
 
     public function create (){
         $categories = Category::all();
-
-        return view('shops.create',compact( 'categories'));
+        $wallets = auth()->user()->wallet_users;
+        return view('shops.create',compact( 'categories', 'wallets'));
     }
 
     public function store (Request  $request){
-
-
-        /*$banner = $request->file('banner')->store('public/images');
-        $url_banner = Storage::url($banner);*/
 
         $image = $request->file('image')->store('public/images');
         $url_image = Storage::url($image);
 
         Shop::firstOrCreate([
-            'user_id' => auth()->user()->id,
-            /*'banner' =>$url_banner,*/
+            'wallet_users_id' => $request->wallet_users_id,
             'image' =>$url_image,
             'name' => $request->name,
             'slug' =>  $request->slug,
